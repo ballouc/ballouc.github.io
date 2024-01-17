@@ -1,0 +1,133 @@
+body {
+  display: flex;
+  height: 115vh;
+  overflow-y: hidden;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+header {
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+
+#github {
+  margin-right: auto;
+}
+
+#github,
+#linkedin,
+#reset {
+  padding: 10px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+#page-content {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#page-header {
+  user-select: none;
+  font-size: 7.5rem;
+}
+
+#deal-me-button {
+  width: 6%;
+  height: 30px;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+}
+
+#hand-container {
+  /* border: 1px solid black; */
+  width: 60%;
+  display: flex;
+  /* background-color: lightblue; */
+  transform: translateY(25%);
+  justify-content: space-evenly;
+}
+
+.card-container {
+  aspect-ratio: 2.5 / 3.5;
+  width: 25%;
+  /* border: 1px solid black; */
+}
+
+.card {
+  cursor: pointer;
+  aspect-ratio: 2.5 / 3.5;
+  width: 25%;
+  margin: 0px;
+  border-radius: 3%;
+  background-size: 100% 100%;
+  position: absolute;
+
+  transition-property: width;
+  transition-duration: 0.2s;
+
+  animation: loadCards 1s;
+}
+
+/* Hard-coded using CSS. This is inefficient! What if I make a
+list of possible images, and then using JavaScript I pick four of those
+images at random, and put that image on the card face.
+
+Then, for API practice, I could make a search bar which displays the
+image and other information about the card by doing a GET request. */
+#brainstorm {
+  background-image: url(https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/hearts_queen.svg);
+  transform: rotate(-15deg);
+  /* border: 1px solid #add8e6; */
+}
+
+#lightning-bolt {
+  background-image: url(https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/spades_king.svg);
+  transform: rotate(-5deg) translateY(-12.5%);
+}
+
+#dark-ritual {
+  background-image: url(https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/diamonds_jack.svg);
+  transform: rotate(5deg) translateY(-12.5%);
+}
+
+#solitude {
+  background-image: url(https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/clubs_ace.svg);
+  transform: rotate(15deg);
+}
+
+.card:hover {
+  /* transform: scale(1.3) !important;
+  transition: transform 0.2s ease-in-out; */
+  width: 30%;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes loadCards {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateX(0);
+    /* transform 10+ degrees based on child position starting at -5
+        and translate children 2 and 3 -12.5% */
+  }
+}

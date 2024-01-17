@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://api.scryfall.com"></script>
+    <title>Magic Cards Demo</title>
+  </head>
+  <body id="page-body">
+    <header id="page-header">
+      <div id="linkedin"><a href="https://www.linkedin.com/in/cam-ballou/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+      <div id="github"><a href="https://github.com/ballouc" target="_blank"><i class="fa-brands fa-github"></i></a></div>
+      <div id="reset"></a><i class="fa-solid fa-arrows-rotate" onclick="reset()"></i></div>
+    </header>
+    <div id="page-content">
+        <h1 id="page-header">[ cam ballou ]</h1>
+        <button id="deal-me-button" type="button">deal me in</button>
+    </div>
+    <div id="hand-container">
+      <div class="card-container" id="brainstorm-container">
+        <div class="card hidden" id="brainstorm" onclick="changeScreen(this)"></div>
+      </div>
+      <div class="card-container" id="lightning-bolt-container">
+        <div class="card hidden" id="lightning-bolt" onclick="changeScreen(this)"></div>
+      </div>
+      <div class="card-container" id="dark-ritual-container">
+        <div class="card hidden" id="dark-ritual" onclick="changeScreen(this)"></div>
+      </div>
+      <div class="card-container" id="solitude-container">
+        <div class="card hidden" id="solitude" onclick="changeScreen(this)"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
